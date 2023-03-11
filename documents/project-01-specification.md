@@ -123,4 +123,4 @@ Nota = 8 * (pontos / total de pontos) + 0,2 * nota do relatório
 
 ### Atenção
 
-Caso neessário, o aluno será chamado para apresentar o código e explicar o funcionamento do mesmo, podendo impactar na nota acima.
+Caso necessário, o aluno será chamado para apresentar o código e explicar o funcionamento do mesmo, podendo impactar na nota acima.
