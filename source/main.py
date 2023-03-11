@@ -1,10 +1,9 @@
 """
-Project: Final Project - Covid19 Vaccination
-Professor: João Meidanis
-Students: Pedro Henrique Di Francia Rosso and Rubens de Castro Pereira
-Date: 19/11/2022
-Version: 1.0.0
-Function: Generate base graph
+Project: 01 - A super basic simulator of logical circuits 
+Professor: Rodolfo Jardim de Azevedo
+Student: Rubens de Castro Pereira
+Date: 09/03/2023
+Version: 1.0
 """
 
 # ###########################################
