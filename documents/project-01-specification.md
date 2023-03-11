@@ -30,17 +30,14 @@ B = OR D E
 C = NOT F  
 D = NAND G H  
 
-### Atenção
+> ### Atenção
+> Você pode supor que as portas lógicas tenham apenas 2 entradas, exceto a NOT que tem apenas 1 entrada. Caso seja necessário uma implementação com mais entradas, múltiplas instâncias das portas lógicas devem ser utilizadas.
 
-Você pode supor que as portas lógicas tenham apenas 2 entradas, exceto a NOT que tem apenas 1 entrada. Caso seja necessário uma implementação com mais entradas, múltiplas instâncias das portas lógicas devem ser utilizadas.
+> ### Informação
+> Todas as portas lógicas possuem o mesmo atraso de propagação, que é o tempo necessário para que o sinal de saída seja alterado após a alteração de uma das entradas.
 
-### Informação
-
-Todas as portas lógicas possuem o mesmo atraso de propagação, que é o tempo necessário para que o sinal de saída seja alterado após a alteração de uma das entradas.
-
-### Atividade
-
-Você deve sempre simular seu circuito com atraso 0 e atraso 1, gerando duas saídas.
+> ### Atividade
+> Você deve sempre simular seu circuito com atraso 0 e atraso 1, gerando duas saídas.
 
 ## Entrada de estímulos
 A entrada de estímulos é uma lista de valores para cada variável e indicadores de tempo. As variáveis possuem atribuições simples como "A = 0" ou "B = 1". Os indicadores de tempo sempre começam com um sinal + seguido por um número que indica quanto tempo precisa avançar a simulação, como "+10" que indica um avanço de 10 ciclos na simulação. Atribua zero a toda variável que não tiver valor inicial definido. Por exemplo, a entrada:
