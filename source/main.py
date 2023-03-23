@@ -96,24 +96,12 @@ def save_results(path, result_filename, results):
     if os.path.exists(path + result_filename):
         os.remove(path + result_filename)     
 
-    # saving results into csv file 
-    df = pd.DataFrame(results)
-    print(df)
-    # df.to_csv(path + result_filename, index=False, header=False, doublequote=False)
-    # df.to_csv(path + result_filename, index=False, header=False, quotechar=" ")
-    # df.to_csv(path + result_filename, index=False, header=False, quoting=3, sep=",", escapechar="")
-    # df.to_csv(path + result_filename, index=False, header=False, quoting=3, sep=",", escapechar=",")
-    x = 0
-
-    # my_file = open(path + result_filename, 'w+', newline = '')
-    # with open(path + result_filename, 'w') as output:
-    #     output.write(str(results))
-        
+    # creating text file and saving results
     with open(path + result_filename, 'w') as output:
         for result in results:
-            print(result)
-            # lines = df.to_string(header=False, index=False)
             output.write(result + '\n')
+
+    # closing text file 
     output.close()  
 
 # Process all steps of test 
@@ -153,13 +141,15 @@ def process_test(test, test_path, test_name):
 
     # running simulation with delay = 0
     results = circuit.run_simulation(lst_stimuli, circuit.DELAY_0)
+
+    # saving results to "saida" text file 
     save_results(subtest_path, 'saida0.csv', results)
-    x = 0
 
     # running simulation with delay = 1
     results = circuit.run_simulation(lst_stimuli, circuit.DELAY_1)
+
+    # saving results to "saida" text file 
     save_results(subtest_path, 'saida1.csv', results)
-    x = 0
 
 
 # ###########################################
