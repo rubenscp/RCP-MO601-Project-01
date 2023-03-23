@@ -89,12 +89,39 @@ def check_test_files(test, subtest_path):
     return error
 
 
+# Save results of simulation
+def save_results(path, result_filename, results):
+    
+    # removing files to save if exists 
+    if os.path.exists(path + result_filename):
+        os.remove(path + result_filename)     
+
+    # saving results into csv file 
+    df = pd.DataFrame(results)
+    print(df)
+    # df.to_csv(path + result_filename, index=False, header=False, doublequote=False)
+    # df.to_csv(path + result_filename, index=False, header=False, quotechar=" ")
+    # df.to_csv(path + result_filename, index=False, header=False, quoting=3, sep=",", escapechar="")
+    # df.to_csv(path + result_filename, index=False, header=False, quoting=3, sep=",", escapechar=",")
+    x = 0
+
+    # my_file = open(path + result_filename, 'w+', newline = '')
+    # with open(path + result_filename, 'w') as output:
+    #     output.write(str(results))
+        
+    with open(path + result_filename, 'w') as output:
+        for result in results:
+            print(result)
+            # lines = df.to_string(header=False, index=False)
+            output.write(result + '\n')
+    output.close()  
+
 # Process all steps of test 
-def process_test(test, test_path):
+def process_test(test, test_path, test_name):
 
     print()
     print(f'#'*50)
-    print(f'Processing test "{test}"')
+    print(f'Processing "{test} - {test_name}"')
     print(f'#'*50)
 
     # setting subtest path 
@@ -125,10 +152,14 @@ def process_test(test, test_path):
     print(f'4) Simulating logical circuit')
 
     # running simulation with delay = 0
-    circuit.run_simulation(lst_stimuli, circuit.DELAY_0)
+    results = circuit.run_simulation(lst_stimuli, circuit.DELAY_0)
+    save_results(subtest_path, 'saida0.csv', results)
+    x = 0
 
     # running simulation with delay = 1
-    # circuit.run_simulation(lst_stimuli, circuit.DELAY_1)
+    results = circuit.run_simulation(lst_stimuli, circuit.DELAY_1)
+    save_results(subtest_path, 'saida1.csv', results)
+    x = 0
 
 
 # ###########################################
@@ -139,14 +170,45 @@ if __name__ == '__main__':
     root_path = os.getcwd().replace("\\", "/") + "/"
     test_path = root_path + 'test/'
 
+    # setting possible test folders
+    simulate_test_folders = {'test_01' : [True, 'Sample of the Project 1 - one stimulus per line '], 
+                             'test_02' : [True, 'Sample of the Project 1 - many stimulus per line '], 
+                             'test_03' : [True, 'Sample from website https://www.makerhero.com/blog/circuitos-logicos-logica-booleana-em-cis/ '], 
+                             'test_04' : [True, 'Flip-flop circuit - https://blog.pantuza.com/artigos/elementos-de-memoria-o-circuito-logico-flip-flop-d'], 
+                             'test_05' : [False, 'test '], 
+                             'test_06' : [False, 'test '], 
+                             'test_07' : [False, 'test '], 
+                             'test_08' : [False, 'test '], 
+                             'test_09' : [False, 'test '], 
+                             'test_10' : [False, 'test '], 
+                             'test_11' : [False, 'test '], 
+                             'test_12' : [False, 'test '], 
+                             'test_13' : [False, 'test '], 
+                             'test_14' : [False, 'test '], 
+                             'test_15' : [False, 'test '], 
+                             'test_16' : [False, 'test '], 
+                             'test_17' : [False, 'test '], 
+                             'test_18' : [False, 'test '], 
+                             'test_19' : [False, 'test '], 
+                             'test_20' : ['test ', False ]
+                            }
+
     # processing each test case definied in the folder tests 
     tests = [f for f in os.listdir(test_path)]
     for test in tests:
         if test == 'desktop.ini': continue
+        
+        if not simulate_test_folders[test][0]: 
+            print()
+            print(f'{test} - {simulate_test_folders[test][1].strip()} isn\'t able to simulate.')
+            print()            
+            continue
 
         # processing test 
-        process_test(test, test_path)
+        test_name = simulate_test_folders[test][1].strip()
+        process_test(test, test_path, test_name)
 
 
     print()
     print(f'End of Simulation')
+    print()

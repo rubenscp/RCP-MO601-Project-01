@@ -200,7 +200,7 @@ class Circuit:
         self.set_simulation_time_of_components(simulation_time, delay)
         
         loop_counter = 0
-        timeout = 100
+        timeout = 10
 
         # running simulation of logical circuit 
         while not end_simulation_indicator  and  loop_counter < timeout:
@@ -211,8 +211,10 @@ class Circuit:
                 # runing the stimuli input             
                 # stimuli = df_stimuli.values.tolist()
                 for stimulus in lst_stimuli:       
-                    print(f'run_simulation 01')
-                    print(f'Stimulus: {stimulus}')
+                    
+                    # print(f'run_simulation 01')
+                    # print(f'Stimulus: {stimulus}')
+
                     token = stimulus[0]
                     if self.isVariable(token):
                         #  setting input signal to last input signal 
@@ -229,7 +231,7 @@ class Circuit:
 
                     else:
 
-                        print(f'run_simulation 02')
+                        # print(f'run_simulation 02')
 
                         # setting initial conditions of stimulus 
                         if simulation_time == 0:
@@ -239,7 +241,7 @@ class Circuit:
                         time_indicator_value = self.get_time(token)
                         for i in range(time_indicator_value):
                          
-                            print(f'run_simulation 03')
+                            # print(f'run_simulation 03')
 
                             # calculate the logical gates
                             self.calculate_logical_gates(simulation_time, delay)
@@ -259,13 +261,14 @@ class Circuit:
                 # setting finished stimulus 
                 finished_stimulus = True 
 
-                print(f'run_simulation 04')
+                # print(f'run_simulation 04')
 
+            # print(f'ATENCAO: terminaram os estímulos {finished_stimulus}')
 
             # checking if has cycles delta time to run
             if has_cycles_delta_time_to_do:
 
-                print(f'run_simulation 05')
+                # print(f'run_simulation 05')
 
                 # calculate the logical gates
                 self.calculate_logical_gates(simulation_time, delay)
@@ -280,7 +283,7 @@ class Circuit:
                 self.set_simulation_time_of_components(simulation_time, delay)
 
 
-            print(f'run_simulation 06')
+            # print(f'run_simulation 06')
 
             # checking if last two outputs are equals 
             if self.last_output == self.penultimate_output:
@@ -297,9 +300,8 @@ class Circuit:
         if loop_counter >= timeout:
             print(f'ATENÇÃO: A simulação foi encerrada com \'timeout\' de {timeout} repetições sem estabilizar a saída do circuito!')
 
-        print(f'run_simulation 07')
-
-
+        # print(f'run_simulation 07')
+        return self.outputs
 
     # setting the simulation time of the variable according by delay
     def set_simulation_time_of_variable(self, variable, simulation_time, delay):
@@ -341,7 +343,7 @@ class Circuit:
         
         # running simulation of logical circuit while delta time is active 
         while not end_delta_time:
-            print(f'calculate_logical_gates 01')
+            # print(f'calculate_logical_gates 01')
 
             # indicator of updating component values
             has_updating_component_value = False 
@@ -349,7 +351,7 @@ class Circuit:
             # execute all component operations depending on the simulation time 
             for component_sequence in self.components_execution_sequence:
 
-                print(f'calculate_logical_gates 02')
+                # print(f'calculate_logical_gates 02')
 
                 # getting parameters to execute operation
                 variable_output = component_sequence[1]
@@ -358,7 +360,7 @@ class Circuit:
                 component_simulation_time = component[0].get('simulation_time')
                 if component_simulation_time == simulation_time:
                     
-                    print(f'calculate_logical_gates 02.1')
+                    # print(f'calculate_logical_gates 02.1')
 
                     # get other component attributes 
                     operation = component[0].get('operation')
@@ -388,7 +390,7 @@ class Circuit:
         # adding variables values to output 
         self.add_values_to_simulation_output(simulation_time)
 
-        print(f'calculate_logical_gates 03')
+        # print(f'calculate_logical_gates 03')
 
     # calculating result of operation 
     def calculate_operation_result(self, operation, first_variable_value, second_variable_value):
@@ -512,7 +514,7 @@ class Circuit:
 
         # printing future 
         self.outputs.append(output_string)
-        print(output_string)
+        # print(output_string)
 
     def show_final_output(self, delay) -> str:
         print()
