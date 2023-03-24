@@ -179,8 +179,7 @@ class Circuit:
         print()        
         print(f'Running Simulation')
         print(f'Delay: {delay}')
-        print()
-
+        
         # initializing auxiliary objects 
         self.initialize_working_circuit_objects()
 
@@ -200,7 +199,7 @@ class Circuit:
         self.set_simulation_time_of_components(simulation_time, delay)
         
         loop_counter = 0
-        timeout = 10
+        timeout = 20
 
         # running simulation of logical circuit 
         while not end_simulation_indicator  and  loop_counter < timeout:

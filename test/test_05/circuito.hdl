@@ -1,0 +1,6 @@
+F = AND A B
+G = NOT A
+D = AND C I
+E = AND B D
+H = NOR E I
+I = NOR H F
