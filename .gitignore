@@ -1,6 +1,8 @@
 .idea
 __pycache__
 desktop.ini
+*.zip
+test/*.zip
 data/input/*
 !data/input/.gitkeep
 !data/input/states_of_brazil.xlsx
