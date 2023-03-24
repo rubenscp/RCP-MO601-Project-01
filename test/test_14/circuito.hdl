@@ -1,0 +1,5 @@
+A = NAND C B
+B = NAND A D
+C = AND E F
+D = AND F G
+E = NOT G

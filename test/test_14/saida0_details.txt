@@ -1,0 +1,2 @@
+Test name   : test_14
+Description : Teste fornecido pelo Casio Pacheco Krebs - Latch tipo D

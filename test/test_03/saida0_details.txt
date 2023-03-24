@@ -1,0 +1,2 @@
+Test name   : test_03
+Description : Sample of the Project 1 - one stimulus per line with time cycles > 1

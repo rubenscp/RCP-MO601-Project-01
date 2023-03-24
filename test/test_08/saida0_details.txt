@@ -1,0 +1,2 @@
+Test name   : test_08
+Description : Sample from website https://www.makerhero.com/blog/circuitos-logicos-logica-booleana-em-cis/

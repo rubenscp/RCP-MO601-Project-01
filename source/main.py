@@ -179,33 +179,44 @@ if __name__ == '__main__':
     test_path = root_path + 'test/'
 
     # setting possible test folders
-    simulate_test_folders = {'test_01' : [False, 'Sample of the Project 1 - one stimulus per line '], 
-                             'test_02' : [False, 'Sample of the Project 1 - many stimulus per line '], 
-                             'test_03' : [False, 'Sample from website https://www.makerhero.com/blog/circuitos-logicos-logica-booleana-em-cis/ '], 
-                             'test_04' : [False, 'Flip-flop circuit - https://blog.pantuza.com/artigos/elementos-de-memoria-o-circuito-logico-flip-flop-d'], 
-                             'test_05' : [True, 'Latch-SR tipo D - https://embarcados.com.br/latch/#Flip-Flop'], 
+    simulate_test_folders = {'test_01' : [True, 'Sample of the Project 1 - one stimulus per line '], 
+                             'test_02' : [True, 'Sample of the Project 1 - many stimulus per line '], 
+                             'test_03' : [True, 'Sample of the Project 1 - one stimulus per line with time cycles > 1'], 
+                             'test_04' : [True, 'test_04'], 
+                             'test_05' : [True, 'test_05'], 
                              'test_06' : [True, 'test_06'], 
                              'test_07' : [True, 'test_07'], 
-                             'test_08' : [True, 'test_08'], 
+                             'test_08' : [True, 'Sample from website https://www.makerhero.com/blog/circuitos-logicos-logica-booleana-em-cis/ '], 
                              'test_09' : [True, 'test_09'], 
-                             'test_10' : [True, 'test_10'], 
-                             'test_11' : [True, 'test_11'], 
-                             'test_12' : [True, 'test_12'], 
-                             'test_13' : [True, 'test_13'], 
-                             'test_14' : [True, 'test_14 '], 
-                             'test_15' : [True, 'test_15 '], 
-                             'test_16' : [True, 'test_16 '], 
-                             'test_17' : [True, 'test_17 '], 
-                             'test_18' : [True, 'test_18 '], 
-                             'test_19' : [True, 'test_19 '], 
-                             'test_20' : [True, 'test_20']
+                             'test_10' : [True, 'Flip-flop circuit - https://blog.pantuza.com/artigos/elementos-de-memoria-o-circuito-logico-flip-flop-d'], 
+                             'test_11' : [True, 'Latch-SR tipo D - https://embarcados.com.br/latch/#Flip-Flop'], 
+                             'test_12' : [True, 'Teste fornecido pelo Casio Pacheco Krebs - +1'], 
+                             'test_13' : [True, 'Teste fornecido pelo Casio Pacheco Krebs - +2'], 
+                             'test_14' : [True, 'Teste fornecido pelo Casio Pacheco Krebs - Latch tipo D'], 
+                             'test_15' : [True, 'test_15'], 
+                             'test_16' : [True, 'test_16'], 
+                             'test_17' : [True, 'test_17'], 
+                             'test_18' : [True, 'test_18'], 
+                             'test_19' : [True, 'test_19'], 
+                             'test_20' : [True, 'test_20'],
+                             'test_21' : [True, 'test_21'],
+                             'test_22' : [True, 'test_22'],
+                             'test_23' : [True, 'test_23'],
+                             'test_24' : [True, 'test_24'],
+                             'test_25' : [True, 'test_25'],
+                             'test_26' : [True, 'test_26'],
+                             'test_27' : [True, 'test_27'],
+                             'test_28' : [True, 'test_28'],
+                             'test_29' : [True, 'test_29'],
+                             'test_30' : [True, 'test_30']
                             }
 
     # processing each test case definied in the folder tests 
     tests = [f for f in os.listdir(test_path)]
+    tests = sorted(tests)
     for test in tests:
-        xxx = test.find('zip')
-        if test == 'desktop.ini' or test.find('zip') != -1: continue
+        if test == 'desktop.ini' or \
+            test.find('zip') != -1: continue
         
         if not simulate_test_folders[test][0]: 
             print()

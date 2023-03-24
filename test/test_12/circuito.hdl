@@ -1,0 +1,5 @@
+A = OR B G
+B = OR C H
+C = OR D I
+D = OR E J
+E = OR F K
