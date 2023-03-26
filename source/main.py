@@ -182,33 +182,33 @@ if __name__ == '__main__':
     simulate_test_folders = {'test_01' : [True, 'Sample of the Project 1 - one stimulus per line '], 
                              'test_02' : [True, 'Sample of the Project 1 - many stimulus per line '], 
                              'test_03' : [True, 'Sample of the Project 1 - one stimulus per line with time cycles > 1'], 
-                             'test_04' : [True, 'test_04'], 
-                             'test_05' : [True, 'test_05'], 
-                             'test_06' : [True, 'test_06'], 
-                             'test_07' : [True, 'test_07'], 
+                             'test_04' : [True, 'Teste 04'], 
+                             'test_05' : [True, 'Teste 05'], 
+                             'test_06' : [True, 'Teste 06'], 
+                             'test_07' : [True, 'Teste 07'], 
                              'test_08' : [True, 'Sample from website https://www.makerhero.com/blog/circuitos-logicos-logica-booleana-em-cis/ '], 
-                             'test_09' : [True, 'test_09'], 
+                             'test_09' : [True, 'Teste 09'], 
                              'test_10' : [True, 'Flip-flop circuit - https://blog.pantuza.com/artigos/elementos-de-memoria-o-circuito-logico-flip-flop-d'], 
                              'test_11' : [True, 'Latch-SR tipo D - https://embarcados.com.br/latch/#Flip-Flop'], 
                              'test_12' : [True, 'Teste fornecido pelo Casio Pacheco Krebs - +1'], 
                              'test_13' : [True, 'Teste fornecido pelo Casio Pacheco Krebs - +2'], 
                              'test_14' : [True, 'Teste fornecido pelo Casio Pacheco Krebs - Latch tipo D'], 
-                             'test_15' : [True, 'test_15'], 
-                             'test_16' : [True, 'test_16'], 
-                             'test_17' : [True, 'test_17'], 
-                             'test_18' : [True, 'test_18'], 
-                             'test_19' : [True, 'test_19'], 
-                             'test_20' : [True, 'test_20'],
-                             'test_21' : [True, 'test_21'],
-                             'test_22' : [True, 'test_22'],
-                             'test_23' : [True, 'test_23'],
-                             'test_24' : [True, 'test_24'],
-                             'test_25' : [True, 'test_25'],
-                             'test_26' : [True, 'test_26'],
-                             'test_27' : [True, 'test_27'],
-                             'test_28' : [True, 'test_28'],
-                             'test_29' : [True, 'test_29'],
-                             'test_30' : [True, 'test_30']
+                             'test_15' : [True, 'Teste 15'], 
+                             'test_16' : [True, 'Teste 16'], 
+                             'test_17' : [True, 'Teste 17'], 
+                             'test_18' : [True, 'Teste 18'], 
+                             'test_19' : [True, 'Teste 19'], 
+                             'test_20' : [True, 'Teste 20'],
+                             'test_21' : [True, 'Teste 21'],
+                             'test_22' : [True, 'Teste 22'],
+                             'test_23' : [True, 'Teste 23'],
+                             'test_24' : [True, 'Teste 24'],
+                             'test_25' : [True, 'Teste 25'],
+                             'test_26' : [True, 'Teste 26'],
+                             'test_27' : [True, 'Teste 27'],
+                             'test_28' : [True, 'Teste 28'],
+                             'test_29' : [True, 'Teste 29'],
+                             'test_30' : [True, 'Teste 30']
                             }
 
     # processing each test case definied in the folder tests 
@@ -218,16 +218,15 @@ if __name__ == '__main__':
         if test == 'desktop.ini' or \
             test.find('zip') != -1: continue
         
-        if not simulate_test_folders[test][0]: 
-            print()
-            print(f'{test} - {simulate_test_folders[test][1].strip()} isn\'t able to simulate.')
-            print()            
-            continue
+        test_name = 'teste sem descrição.'            
+        if simulate_test_folders.get(test) != None:
+            # print()
+            # print(f'{test} - {simulate_test_folders[test][1].strip()} isn\'t able to simulate.')
+            # print()            
+            test_name = simulate_test_folders[test][1].strip()           
 
         # processing test 
-        test_name = simulate_test_folders[test][1].strip()
         process_test(test, test_path, test_name)
-
 
     print()
     print(f'End of Simulation')
