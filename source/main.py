@@ -11,7 +11,6 @@ Version: 1.0
 # ###########################################
 import os
 import pandas as pd
-import csv 
 
 from Circuit import Circuit
 
