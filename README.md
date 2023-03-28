@@ -1,12 +1,12 @@
-## Universidade Estadual de Campinas
-## Instituto de Computação
-## MO601 – Arquitetura de Computadores II
-## Prof. Rodolfo Jardim de Azevedo
-## Aluno: Rubens de Castro Pereira - RA 217146
+# Projeto 1 - Um simulador super básico de circuitos lógicos
+
+### Universidade Estadual de Campinas
+### Instituto de Computação
+### MO601 – Arquitetura de Computadores II
+### Prof. Rodolfo Jardim de Azevedo
+### Aluno: Rubens de Castro Pereira - RA 217146
 
 ___
-
-# Projeto 1 - Um simulador super básico de circuitos lógicos
 
 Este repositório tem o propósito de armazenar todos os artefatos do Projeto 1 que implementa 
 um simulador super básico de circuito lógico.
