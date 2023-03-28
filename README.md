@@ -8,7 +8,10 @@ um simulador super básico de circuito lógico.
 Siga as instruções abaixo para a execução completa dessa aplicação:
 
 1. Clonar repositório do projeto:
-    - git clone https://github.com/rubenscp/RCP-MO601-Project-01.git
+
+```
+$ git clone https://github.com/rubenscp/RCP-MO601-Project-01.git
+```
 	
 2. Acessar a pasta do projeto Python:
 	- cd RCP-MO601-Project-01
@@ -23,7 +26,7 @@ Siga as instruções abaixo para a execução completa dessa aplicação:
 	- executar no comando **docker volume create projeto-01-volume**
 
 6. Execução do container docker:
-	- executar no comando **docker run -t -d -P --name projeto-01 -v projeto-01-volume:/app/test projeto-01:1.0**
+	- executar no comando **docker run -t -P --name projeto-01 -v projeto-01-volume:/app/test --rm projeto-01:1.0**
 	
 7. Copiar os arquivos resultados para a pasta local:
 	- executar no comando **docker cp projeto-01:/app/test/. test/.**
