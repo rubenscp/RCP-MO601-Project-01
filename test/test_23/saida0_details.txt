@@ -1,2 +1,0 @@
-Test name   : test_23
-Description : Teste 23
