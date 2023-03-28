@@ -7,21 +7,21 @@ um simulador super básico de circuito lógico.
 
 Siga as instruções abaixo para a execução completa dessa aplicação:
 
-1. Clonar repositório do projeto:
+## 1. Clonar repositório do projeto:
 
 ```
 git clone https://github.com/rubenscp/RCP-MO601-Project-01.git
 ```
 	
-2. Acessar a pasta do projeto Python:
+## 2. Acessar a pasta do projeto Python:
 	
 ```
 cd RCP-MO601-Project-01
 ```
 	
-3. Copiar os novos testes de simulação dentro da pasta "test".
+## 3. Copiar os novos testes de simulação dentro da pasta "test".
 
-4. Criação da imagem docker da aplicação Python:
+## 4. Criação da imagem docker da aplicação Python:
 	
 ```
 reposicionar novamente  na pasta raiz do projeto "RCP-MO601-Project-01"
@@ -30,22 +30,22 @@ reposicionar novamente  na pasta raiz do projeto "RCP-MO601-Project-01"
 docker build -t projeto-01:1.0 .
 ```
 
-5. Criação do volume docker para mapear pasta no seu computador:
+## 5. Criação do volume docker para mapear pasta no seu computador:
 
 ```
 docker volume create projeto-01-volume
 ```
 
-6. Execução do container docker:
+## 6. Execução do container docker:
 
 ```
 docker run --name projeto-01 -v projeto-01-volume:/app/test projeto-01:1.0
 ```
 	
-7. Copiar os arquivos resultados para a pasta local
+## 7. Copiar os arquivos resultados para a pasta local
 
 ```
 docker cp projeto-01:/app/test/. test/.
 ```
     
-8. Todos os resultados das simulações (arquivos saida0 e saida1) estarão posicionados nas respectivas pastas de testes.
+## 8. Todos os resultados das simulações (arquivos saida0 e saida1) estarão posicionados nas respectivas pastas de testes.
