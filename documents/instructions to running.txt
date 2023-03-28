@@ -2,7 +2,7 @@
 Clonar repositório do projeto 
 	git clone https://github.com/rubenscp/RCP-MO601-Project-01.git
 	
-Acesar a pastas do projeto 01 
+Acessar a pastas do projeto 01 
 	cd RCP-MO601-Project-01
 	
 Copiar todos os novos testes na pasta "test"

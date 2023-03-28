@@ -1,2 +1,0 @@
-Test name   : test_10
-Description : Flip-flop circuit - https://blog.pantuza.com/artigos/elementos-de-memoria-o-circuito-logico-flip-flop-d

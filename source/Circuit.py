@@ -111,14 +111,6 @@ class Circuit:
     def is_future_of_component(self, variable):
         return True if self.components.get(variable) != None else False
 
-    # # getting the actual signal value of the variable
-    # def get_actual_signal(self, variable): 
-    #     return self.variables.get(variable)[0].get('actual')
-    
-    # # setting signal value in the variable actual 
-    # def set_actual_signal(self, variable, signal_value):
-    #     (self.variables[variable])[0].update({'actual' : signal_value})
-
     # getting the last input of the variable
     def get_last_input_signal(self, variable): 
         if variable is np.nan:
@@ -150,21 +142,7 @@ class Circuit:
         if variable is np.nan:
             return None
         (self.variables[variable])[0].update({'used' : True})
-
-    # # getting the signal value of the variable actual 
-    # def get_variable_signal(self, variable, actual_or_future): 
-    #     if variable is np.nan:
-    #         return None
-    #     return self.variables.get(variable)[0].get(actual_or_future)
-    
-    # # setting signal value in the variable actual 
-    # def set_actual_signal(self, variable, signal_value):
-    #     (self.variables[variable])[0].update({'actual' : signal_value})
-        
-    # # setting signal value in the variable future 
-    # def set_future_signal(self, variable, signal_value):
-    #     (self.variables[variable])[0].update({'future' : signal_value})
-        
+       
     # checking if is variable or time indicator 
     def isVariable(self, token):
         return True if token in string.ascii_uppercase else False
@@ -210,9 +188,6 @@ class Circuit:
                 # runing the stimuli input             
                 # stimuli = df_stimuli.values.tolist()
                 for stimulus in lst_stimuli:       
-                    
-                    # print(f'run_simulation 01')
-                    # print(f'Stimulus: {stimulus}')
 
                     token = stimulus[0]
                     if self.isVariable(token):
@@ -230,8 +205,6 @@ class Circuit:
 
                     else:
 
-                        # print(f'run_simulation 02')
-
                         # setting initial conditions of stimulus 
                         if simulation_time == 0:
                             self.move_last_to_penultimate_input_signal_of_variables()
@@ -240,8 +213,6 @@ class Circuit:
                         time_indicator_value = self.get_time(token)
                         for i in range(time_indicator_value):
                          
-                            # print(f'run_simulation 03')
-
                             # calculate the logical gates
                             self.calculate_logical_gates(simulation_time, delay)
 
@@ -260,14 +231,8 @@ class Circuit:
                 # setting finished stimulus 
                 finished_stimulus = True 
 
-                # print(f'run_simulation 04')
-
-            # print(f'ATENCAO: terminaram os estímulos {finished_stimulus}')
-
             # checking if has cycles delta time to run
             if has_cycles_delta_time_to_do:
-
-                # print(f'run_simulation 05')
 
                 # calculate the logical gates
                 self.calculate_logical_gates(simulation_time, delay)
@@ -280,9 +245,6 @@ class Circuit:
 
                 # setting the simulation time of the components according by delay
                 self.set_simulation_time_of_components(simulation_time, delay)
-
-
-            # print(f'run_simulation 06')
 
             # checking if last two outputs are equals 
             if self.last_output == self.penultimate_output:
@@ -304,7 +266,6 @@ class Circuit:
 
     # setting the simulation time of the variable according by delay
     def set_simulation_time_of_variable(self, variable, simulation_time, delay):
-        # self.variables[variable][0].update({'simulation_time' : simulation_time})
         if simulation_time == 0:
             self.variables[variable][0].update({'simulation_time' : 0})
         else:
@@ -326,14 +287,6 @@ class Circuit:
                     # reserved for future use, so assume delay = 0 
                     component_value[0].update({'simulation_time' : simulation_time})    
 
-    # # setting the simulation time of the variable according by delay
-    # def set_actual_values_according_by_simulation_time(self, simulation_time):
-    #     for variable in self.variables:
-    #         if simulation_time == 0  or \
-    #             simulation_time == self.variables[variable][0].get('simulation_time'):
-    #             self.move_future_to_actual_variable(variable)
-    #             self.variables[variable][0].update({'simulation_time' : -1})
-
     # calculating the logical gates (components)
     def calculate_logical_gates(self, simulation_time, delay):
 
@@ -342,15 +295,12 @@ class Circuit:
         
         # running simulation of logical circuit while delta time is active 
         while not end_delta_time:
-            # print(f'calculate_logical_gates 01')
 
             # indicator of updating component values
             has_updating_component_value = False 
 
             # execute all component operations depending on the simulation time 
             for component_sequence in self.components_execution_sequence:
-
-                # print(f'calculate_logical_gates 02')
 
                 # getting parameters to execute operation
                 variable_output = component_sequence[1]
@@ -359,8 +309,6 @@ class Circuit:
                 component_simulation_time = component[0].get('simulation_time')
                 if component_simulation_time == simulation_time:
                     
-                    # print(f'calculate_logical_gates 02.1')
-
                     # get other component attributes 
                     operation = component[0].get('operation')
                     first_variable = component[0].get('first_variable')
@@ -389,8 +337,6 @@ class Circuit:
         # adding variables values to output 
         self.add_values_to_simulation_output(simulation_time)
 
-        # print(f'calculate_logical_gates 03')
-
     # calculating result of operation 
     def calculate_operation_result(self, operation, first_variable_value, second_variable_value):
         # initializing rsult 
@@ -415,45 +361,29 @@ class Circuit:
 
     # calculating the AND operation 
     def operation_AND(self, first_operator, second_operator):
-        # print(f'{first_operator} and {second_operator} = {first_operator and second_operator}')
         return first_operator and second_operator
     
     # calculating the OR operation 
     def operation_OR(self, first_operator, second_operator):
-        # print(f'{first_operator} or {second_operator} = {first_operator or second_operator}')
         return first_operator or second_operator
     
     # calculating the NOT operation 
     def operation_NOT(self, operator):
-        # print(f'not {operator} = {~operator+2}')
         return ~operator+2
         # return not(operator)
     
     # calculating the NAND operation 
     def operation_NAND(self, first_operator, second_operator):
-        # print(f'> {first_operator} nand {second_operator} = {self.operation_NOT(self.operation_AND(first_operator, second_operator))}')
         return self.operation_NOT(self.operation_AND(first_operator, second_operator))
  
     # calculating the NOR operation   
     def operation_NOR(self, first_operator, second_operator):
-        # print(f'> {first_operator} nor {second_operator} = {self.operation_NOT(self.operation_OR(first_operator, second_operator))}')
         return self.operation_NOT(self.operation_OR(first_operator, second_operator))
     
     # calculating the XOR operation 
     def operation_XOR(self, first_operator, second_operator):
-        # print(f'{first_operator} xor {second_operator} = {first_operator ^ second_operator}')
         return first_operator ^ second_operator
   
-    # # check if each variable has different values of actual and future
-    # def has_variable_with_actual_and_future_values_different(self):
-    #     for variable, variable_value in self.variables.items():
-    #         if self.get_variable_signal(variable, 'actual') != self.get_variable_signal(variable, 'future'):
-    #             # there are no variables with actual and future values different
-    #             return True
-        
-    #     # has some variable with actual and future values are different 
-    #     return False
-    
     # move the last input value to penultimate input value of all variables
     def move_last_to_penultimate_input_signal_of_variables(self):
         for variable, variable_value in self.variables.items():
@@ -462,15 +392,6 @@ class Circuit:
     # move the last input value to penultimate input value of one variable 
     def move_last_to_penultimate_input_signal_of_variable(self, variable):
         self.set_penultimate_input_signal(variable, self.get_last_input_signal(variable))
-
-    # # move the future value to actual value of all variables
-    # def move_future_to_actual_values(self) -> str:
-    #     for variable, variable_value in self.variables.items():
-    #         self.move_future_to_actual_variable(variable)
-
-    # # move the future value to actual value of the one variable 
-    # def move_future_to_actual_variable(self, variable) -> str:
-    #     self.set_actual_signal(variable, self.get_variable_signal(variable, 'future'))
 
     #  show variable values 
     def show_variables(self) -> str:
@@ -513,7 +434,6 @@ class Circuit:
 
         # printing future 
         self.outputs.append(output_string)
-        # print(output_string)
 
     def show_final_output(self, delay) -> str:
         print()
