@@ -4,6 +4,7 @@ desktop.ini
 *.zip
 test/*.zip
 ~*.*
+.vscode
 data/input/*
 !data/input/.gitkeep
 !data/input/states_of_brazil.xlsx

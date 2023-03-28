@@ -14,24 +14,38 @@ git clone https://github.com/rubenscp/RCP-MO601-Project-01.git
 ```
 	
 2. Acessar a pasta do projeto Python:
-	- cd RCP-MO601-Project-01
+	
+```
+cd RCP-MO601-Project-01
+```
 	
 3. Copiar os novos testes de simulação dentro da pasta "test".
 
 4. Criação da imagem docker da aplicação Python:
-	- reposicionar novamente  na pasta raiz do projeto "RCP-MO601-Project-01"
-	- executar no comando **docker build -t projeto-01:1.0 .**
+	
+```
+reposicionar novamente  na pasta raiz do projeto "RCP-MO601-Project-01"
+```
+```
+docker build -t projeto-01:1.0 .
+```
 
 5. Criação do volume docker para mapear pasta no seu computador:
-	- executar no comando **docker volume create projeto-01-volume**
+
+```
+docker volume create projeto-01-volume
+```
 
 6. Execução do container docker:
 
 ```
-docker run --name projeto-01 -v projeto-01-volume:/app/test --rm projeto-01:1.0
+docker run --name projeto-01 -v projeto-01-volume:/app/test projeto-01:1.0
 ```
 	
-7. Copiar os arquivos resultados para a pasta local:
-	- executar no comando **docker cp projeto-01:/app/test/. test/.**
+7. Copiar os arquivos resultados para a pasta local
+
+```
+docker cp projeto-01:/app/test/. test/.
+```
     
 8. Todos os resultados das simulações (arquivos saida0 e saida1) estarão posicionados nas respectivas pastas de testes.
