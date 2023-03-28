@@ -1,7 +1,15 @@
+## Universidade Estadual de Campinas
+## Instituto de Computação
+## MO601 – Arquitetura de Computadores II
+## Prof. Rodolfo Jardim de Azevedo
+## Aluno: Rubens de Castro Pereira - RA 217146
+
+___
+
 # Projeto 1 - Um simulador super básico de circuitos lógicos
 
 Este repositório tem o propósito de armazenar todos os artefatos do Projeto 1 que implementa 
-um simulador super básico de circuito lógico. 
+um simulador super básico de circuito lógico.
 
 <!-- This repository has the main aim to store the assignments of the discipline Computer Architecture II of the Computer Science Pos-graduation Course of the Institute of Computation of UNICAMP. -->
 
@@ -54,5 +62,4 @@ docker cp projeto-01:/app/test/. test/.
 ## 8. Resultados da simulação
 
 
-Todos os resultados das simulações (*saida0.csv* e *saida1.csv*) estarão posicionados nas respectivas pastas de testes.
-
+Todos os resultados das simulações (*saida0.csv* e *saida1.csv*) estarão posicionados nas pastas específicas dos testes.

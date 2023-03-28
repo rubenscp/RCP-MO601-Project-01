@@ -139,8 +139,6 @@ def process_test(test_name, test_path, test_description):
     if check_test_files(test_name, subtest_path):
         return 
 
-    x = 0
-
     # 2) Reading the input data
     print()
     print(f'2) Reading input data')
