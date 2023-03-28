@@ -1,11 +1,11 @@
-# Projeto 1 - Projeto 1 - Um simulador super básico de circuitos lógicos (Repositório Github: RCP-MO601-Project-01)
+# Projeto 1 - Um simulador super básico de circuitos lógicos
 
 Este repositório tem o propósito de armazenar todos os artefatos do Projeto 1 que implementa 
 um simulador super básico de circuito lógico. 
 
 <!-- This repository has the main aim to store the assignments of the discipline Computer Architecture II of the Computer Science Pos-graduation Course of the Institute of Computation of UNICAMP. -->
 
-Siga as instruções abaixo para a execução completa dessa aplicaçã:
+Siga as instruções abaixo para a execução completa dessa aplicação:
 
 1. Clonar repositório do projeto:
     - git clone https://github.com/rubenscp/RCP-MO601-Project-01.git
