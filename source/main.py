@@ -24,6 +24,37 @@ from Circuit import Circuit
 # Application Methods
 # ###########################################
 
+# Check if test has all necessary files to simulating the logical circuit 
+def check_test_files(test, subtest_path):
+    error = False 
+
+    file = 'circuito.hdl'
+    if not os.path.isfile(subtest_path + file):
+        print(f'ERROR: File "{file}" does not exist in "{test}"')
+        error = True 
+
+    file = 'estimulos.txt'
+    if not os.path.isfile(subtest_path + file):
+        print(f'ERROR: File "{file}" does not exist in "{test}"')
+        error = True 
+
+    # file = 'esperado0.csv'
+    # if not os.path.isfile(subtest_path + file):
+    #     print(f'ERROR: File "{file}" does not exist in "{test}"')
+    #     error = True 
+
+    # file = 'esperado1.csv'
+    # if not os.path.isfile(subtest_path + file):
+    #     print(f'ERROR: File "{file}" does not exist in "{test}"')
+    #     error = True 
+
+    # printing result
+    if not error:
+        print(f'> Test files are ok.')
+    # returning checking result 
+    return error
+
+
 # Read the input data: logical circuit and its stimuli
 def read_input_data(path, circuit_filename, stimuli_filename):
 
@@ -56,36 +87,6 @@ def read_input_data(path, circuit_filename, stimuli_filename):
 
     # returning logical circuit and stimuli
     return df_circuit, lst_stimuli_detailed
-
-# Check if test has all necessary files to simulating the logical circuit 
-def check_test_files(test, subtest_path):
-    error = False 
-
-    file = 'circuito.hdl'
-    if not os.path.isfile(subtest_path + file):
-        print(f'ERROR: File "{file}" does not exist in "{test}"')
-        error = True 
-
-    file = 'estimulos.txt'
-    if not os.path.isfile(subtest_path + file):
-        print(f'ERROR: File "{file}" does not exist in "{test}"')
-        error = True 
-
-    file = 'esperado0.csv'
-    if not os.path.isfile(subtest_path + file):
-        print(f'ERROR: File "{file}" does not exist in "{test}"')
-        error = True 
-
-    file = 'esperado1.csv'
-    if not os.path.isfile(subtest_path + file):
-        print(f'ERROR: File "{file}" does not exist in "{test}"')
-        error = True 
-
-    # printing result
-    if not error:
-        print(f'> Test files are ok.')
-    # returning checking result 
-    return error
 
 
 # Save results of simulation

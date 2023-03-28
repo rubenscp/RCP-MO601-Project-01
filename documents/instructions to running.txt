@@ -1,0 +1,24 @@
+
+Clonar repositório do projeto 
+	git clone rubenscp/RCP-MO601-Project-01
+	
+Acesar a pastas do projeto 01 
+	cd ....
+
+Criação da imagem do projeto
+	docker build -t projeto-01:1.0 .
+
+Execução do container do projeto
+	docker container run -it projeto-01:1.0
+	
+Mapeando pastas físicas para pastas do container
+	docker container run -it --mount type=bind,src=/app/data,dst="W:\My Drive\Doutorado IC-Unicamp\Classes\MO601 - CA2\04. Assignments\Projects\RCP-MO601-Project-01>" project-01:1.0
+	
+Caso queira modificar o conteúdo do projeto, uma nova imagem deve ser gerada.
+	
+	
+
+	
+	
+
+
