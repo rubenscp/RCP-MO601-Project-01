@@ -9,7 +9,7 @@ Siga as instruções abaixo para a execução completa dessa aplicação:
 
 1. Clonar repositório do projeto:
 
-```
+```bash
 $ git clone https://github.com/rubenscp/RCP-MO601-Project-01.git
 ```
 	
