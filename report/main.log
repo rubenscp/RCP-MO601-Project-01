@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.8)  28 MAR 2023 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.6.8)  28 MAR 2023 21:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"w:/My Drive/Doutorado IC-Unicamp/Classes/MO601 - CA2/04. Assignments/Projects/RCP-MO601-Project-01-Report/source/main.tex"
-(w:/My Drive/Doutorado IC-Unicamp/Classes/MO601 - CA2/04. Assignments/Projects/RCP-MO601-Project-01-Report/source/main.tex
+**"w:/My Drive/Doutorado IC-Unicamp/Classes/MO601 - CA2/04. Assignments/Projects/RCP-MO601-Project-01/report/main.tex"
+(w:/My Drive/Doutorado IC-Unicamp/Classes/MO601 - CA2/04. Assignments/Projects/RCP-MO601-Project-01/report/main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (C:\Program Files\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -954,12 +954,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  28086 strings out of 478582
- 531562 string characters out of 2854157
+ 531429 string characters out of 2854157
  887555 words of memory out of 3000000
  45670 multiletter control sequences out of 15000+600000
  485978 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,24n,106p,521b,945s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 110i,24n,106p,514b,945s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Rubens\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk>{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on main.pdf (6 pages, 214222 bytes).
 PDF statistics:
