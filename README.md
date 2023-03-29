@@ -1,9 +1,13 @@
 # Projeto 1 - Um simulador super básico de circuitos lógicos
 
 ### Universidade Estadual de Campinas
+
 ### Instituto de Computação
+
 ### MO601 – Arquitetura de Computadores II
+
 ### Prof. Rodolfo Jardim de Azevedo
+
 ### Aluno: Rubens de Castro Pereira - RA 217146
 
 ___
@@ -28,6 +32,7 @@ cd RCP-MO601-Project-01
 ```
 	
 ## 3. Adição de novos testes ao simulador
+
 ```
 Copiar os novos testes de simulação dentro da pasta "test".
 ```
