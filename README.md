@@ -1,14 +1,14 @@
 # Projeto 1 - Um simulador super básico de circuitos lógicos
 
-### Universidade Estadual de Campinas
+#### Universidade Estadual de Campinas
 
-### Instituto de Computação
+#### Instituto de Computação
 
-### MO601 – Arquitetura de Computadores II
+#### MO601 – Arquitetura de Computadores II
 
-### Prof. Rodolfo Jardim de Azevedo
+#### Prof. Rodolfo Jardim de Azevedo
 
-### Aluno: Rubens de Castro Pereira - RA 217146
+#### Aluno: Rubens de Castro Pereira - RA 217146
 
 ___
 
@@ -40,7 +40,7 @@ Copiar os novos testes de simulação dentro da pasta "test".
 ### 4. Criação da imagem docker da aplicação Python
 	
 ```
-reposicionar novamente  na pasta raiz do projeto "RCP-MO601-Project-01"
+reposicionar novamente na pasta raiz do projeto *RCP-MO601-Project-01*
 ```
 ```
 docker build -t projeto-01:1.0 .
@@ -84,5 +84,30 @@ ___
 #### Remoção do container "projeto-01"
 
 ```
-docker cp projeto-01:/app/test/. test/.
+docker rm projeto-01
+```
+
+#### Remoção da imagem "projeto-01:1.0"
+
+```
+docker rmi projeto-01:1.0
+```
+
+#### Remoção do volume "projeto-01:volume"
+
+```
+docker volume rm projeto-01-volume
+```
+
+
+#### Listas todos os containeres
+
+```
+docker container ls 
+```
+
+#### Listas todas os volumes 
+
+```
+docker volume ls
 ```
