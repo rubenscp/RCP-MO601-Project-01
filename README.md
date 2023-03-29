@@ -12,10 +12,9 @@
 
 ___
 
-Este repositório tem o propósito de armazenar todos os artefatos do Projeto 1 que implementa 
-um simulador super básico de circuito lógico.
+Este repositório contém todos os artefatos do Projeto 1 que implementa um simulador super básico de circuitos lógicos.
 
-<!-- This repository has the main aim to store the assignments of the discipline Computer Architecture II of the Computer Science Pos-graduation Course of the Institute of Computation of UNICAMP. -->
+O relatório compacto do projeto pode ser acessado [aqui](https://github.com/rubenscp/RCP-MO601-Project-01/blob/main/relatorio.pdf)
 
 Siga as instruções abaixo para a execução completa dessa aplicação:
 
@@ -71,15 +70,7 @@ Todos os resultados das simulações (*saida0.csv* e *saida1.csv*) estarão posi
 
 ___
 
-### Relatório do Projeto
-
-O relatório do projeto pode ser acessado clicando [aqui](https://github.com/rubenscp/RCP-MO601-Project-01/blob/main/relatorio.pdf)
-
-
-___
-
 ### Comandos Docker auxiliares para o projeto
-
 
 #### Remoção do container "projeto-01"
 
