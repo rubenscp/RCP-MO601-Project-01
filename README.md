@@ -30,13 +30,13 @@ git clone https://github.com/rubenscp/RCP-MO601-Project-01.git
 cd RCP-MO601-Project-01
 ```
 	
-### 3. Adição de novos testes ao simulador
+### 3. Adicionar novos testes ao simulador
 
 ```
 Copiar os novos testes de simulação dentro da pasta "test".
 ```
 
-### 4. Criação da imagem docker da aplicação Python
+### 4. Criar imagem docker da aplicação Python
 	
 ```
 reposicionar novamente na pasta raiz do projeto *RCP-MO601-Project-01*
@@ -45,25 +45,25 @@ reposicionar novamente na pasta raiz do projeto *RCP-MO601-Project-01*
 docker build -t projeto-01:1.0 .
 ```
 
-### 5. Criação do volume docker para mapear pasta no seu computador
+### 5. Criar volume docker para o mapeamento da pasta do projeto no seu computador
 
 ```
 docker volume create projeto-01-volume
 ```
 
-### 6. Execução do container docker
+### 6. Executar o container docker
 
 ```
 docker run --name projeto-01 -v projeto-01-volume:/app/test projeto-01:1.0
 ```
 	
-### 7. Copiar os arquivos resultados para a pasta local
+### 7. Copiar os arquivos dos resultados para a pasta local
 
 ```
 docker cp projeto-01:/app/test/. test/.
 ```
     
-### 8. Resultados da simulação
+### 8. Visualização dos resultados da simulação dos testes
 
 
 Todos os resultados das simulações (*saida0.csv* e *saida1.csv*) estarão posicionados nas pastas específicas dos testes.
@@ -72,19 +72,19 @@ ___
 
 ### Comandos Docker auxiliares para o projeto
 
-#### Remoção do container "projeto-01"
+#### Remover o container "projeto-01"
 
 ```
 docker rm projeto-01
 ```
 
-#### Remoção da imagem "projeto-01:1.0"
+#### Remover a imagem "projeto-01:1.0"
 
 ```
 docker rmi projeto-01:1.0
 ```
 
-#### Remoção do volume "projeto-01:volume"
+#### Remover o volume "projeto-01:volume"
 
 ```
 docker volume rm projeto-01-volume
@@ -93,7 +93,7 @@ docker volume rm projeto-01-volume
 #### Listar todos os containeres
 
 ```
-docker container ls 
+docker container ls -a
 ```
 
 #### Listar todas as imagens
