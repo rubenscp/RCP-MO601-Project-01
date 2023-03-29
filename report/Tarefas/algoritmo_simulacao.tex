@@ -1,0 +1,90 @@
+
+\section{Algoritmo de Simulação}
+
+O algoritmo que representa a simulação do circuito lógico é 
+apresentado em \textit{algorithm \space \ref{alg:simulacao}}.
+
+\BlankLine
+
+\begin{algorithm}[h]
+    \caption{Algoritmo do simulador de circuito lógico super simples}
+    \label{alg:simulacao}
+    
+    % defining key words to use in the text
+    \SetKwInput{KwEntrada}{Entrada}
+    \SetKwInOut{KwSaida}{Saída}
+    \SetKwFunction{KwExecutarSimulacao}{ExecutarSimulação}
+
+    \SetAlgoLined
+    
+    \KwEntrada {$circuito.hdl, estimulos.txt$}
+
+    \KwSaida {$saida0.csv, saida1.csv$}
+
+    \KwExecutarSimulacao{circuito, estímulos, atraso}    
+    \Begin{
+
+        inicializar circuito atribuindo valor 0 a todas as variáveis
+
+        inicializar indicador de tempo da simulação
+
+        \CommentSty{O circuito estabilizará quando duas saídas consecutivas forem iguais.}
+        
+        \While{circuito não estabilizar}
+        {
+            \ForEach{estimulo}
+            {
+                \eIf{variavel}
+                {
+                    atribuir valor lido à respectiva variável
+
+                    retornar para ler novo estímulo
+                }
+                {
+                    \CommentSty{Processar conforme a quantidade de indicador de tempo}
+
+                    \While{circuito não estabilizar}
+                    {
+                        calcular portas lógicas do circuito conforme o atraso 
+                        (\textit{quando atraso 0, utilizar os valores do tempo atual nas entradas das portas lógicas e 
+                            quando atraso 1, utilizar os valores do tempo de simulação anterior nas entradas
+                            das portas lógicas}).
+                    }     
+                    
+                    gerar saída utilizando o tempo atual da simulação e os valores de todas as variáveis do circuito
+                }
+
+                incrementar indicador de tempo da simulação
+
+            }
+            
+        }
+        
+    }
+            
+    \BlankLine
+
+    \BlankLine
+
+    \CommentSty{Programa principal - Gerencia a execução da simulação dos testes}
+
+    \ForEach{teste específico}
+    {    
+        ler dados de entrada
+
+        criar circuito
+
+        \BlankLine
+        
+        \KwExecutarSimulacao{circuito, estímulos, 0}    
+
+        gerar saída da simulação do circuito com atraso 0 (\textit{saida0}) 
+
+        \BlankLine
+
+        \KwExecutarSimulacao{circuito, estímulos, 1}    
+        
+        gerar saída da simulação do circuito com atraso 1 (\textit{saida1}) 
+    } 
+
+\end{algorithm}
