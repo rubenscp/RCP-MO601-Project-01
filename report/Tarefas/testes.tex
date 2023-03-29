@@ -1,0 +1,16 @@
+
+\section{Testes}
+
+Os testes do projeto foram organizados em pastas de testes específicos localizados em \textit{/test} 
+no projeto \textit{RCP-MO601-Project-01}. Cada pasta de teste contém a especificação do circuito 
+lógico desejado (\textit{circuito.hdl}), os estímulos (\textit{estimulos.txt}) a serem processados ao 
+longo do tempo (valores de variáveis e/ou indicadores de tempo), 
+os arquivos com as saídas esperadas (\textit{esperado0.csv e esperado1.csv}) e os arquivos resultantes da simulação 
+(\textit{saida0.csv e saida1.csv}).
+
+Novos testes podem ser adicionados à pasta de testes (\textit{/test}), contudo o simulador exige a
+existencia dos arquivos \textit{circuito.hdl} e \textit{estimulos.txt}.
+
+Durante a simulação dos testes, conforme pode-se observar no \textit{algorithm \ref{alg:simulacao}}, 
+todas as pastas de testes específicos são consideradas, seus arquivos de entrada são 
+processados e os resultados (saídas) são armazenados nas mesmas.

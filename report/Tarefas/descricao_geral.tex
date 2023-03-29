@@ -2,14 +2,14 @@
 \section{Descrição geral}
 
 
-O propósito deste projeto é implementar um simulador básico de circuitos lógicos considerando as portas lógicas, 
-os estímulos de entrada e o tipo de atraso em cada simulação.
+O objetivo deste projeto é implementar um simulador básico de circuitos lógicos considerando portas lógicas, 
+estímulos de entrada e tipo de atraso em cada simulação.
 
-As portas lógicas possíveis são AND, OR, NOT, NAND, NOR e XOR. 
+As portas lógicas possíveis nesse simulador são AND, OR, NOT, NAND, NOR e XOR. 
 Os estímulos podem ser variáveis ou indicadores de tempo.
-As variáveis indicam os valores dos seus sinais de entrada (0 ou 1)  
-durante a simulação do circuito lógico sendo permitida até 24 variáveis distintas identificadas 
-pelas letras do alfabeto do idioma português. Os indicadores de tempo são identificados com o caractere "+" \space
+As variáveis indicam os valores dos sinais de entrada (0 ou 1)  
+durante a simulação do circuito lógico, sendo permitida até 24 variáveis distintas identificadas 
+pelas letras do alfabeto do idioma português. Os indicadores de tempo são identificados com o caractere '+' \space
 seguido de um número inteiro qualquer \textit{n}, significando que deve-se avançar \textit{n}
 tempos de simulação.
 
@@ -22,12 +22,13 @@ imediatamente anterior ao tempo atual da simulação.
 Para cada unidade de tempo da simulação, deve-se emitir uma saída com uma lista contendo o valor do tempo da simulação
 e os valores de cada variável.
 
-Para o encerramento de uma simulação específica, será considerada como condição de parada a produção de duas saídas exatamente 
+Para o encerramento de uma simulação específica, será considerada como condição de parada a produção de 
+duas linhas de saída exatamente 
 iguais, indicando que o circuito não possui estímulos a processar e que todas as portas lógicas também processaram seus 
-sinais levando em conta o tipo do atraso do circuito. O encerramento da simulação significa que o circuito 
+sinais levando em conta o tipo de atraso do circuito. O encerramento da simulação significa que o circuito 
 estabilizou e que não haverá nenhuma nova saída diferente das anteriores.
 
-Para testar o simulador, vários cenários de teste são fornecidos contendo diferentes circuitos lógicos e estímulos de entrada. 
+Para testar o simulador, vários cenários de teste são fornecidos contendo diferentes circuitos lógicos e estímulos.
 Para cada cenário de teste são executadas as principais etapas abaixo:
 \begin{enumerate}
     \item Criação do circuito com suas respectivas portas lógicas.

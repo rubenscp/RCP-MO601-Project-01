@@ -99,6 +99,7 @@ class Circuit:
             list.append([component_value[0].get('priority'), component])
                
         self.components_execution_sequence.clear
+        # this sort command was removed because we don't need to process the logical gates in order
         # self.components_execution_sequence = sorted(list)
         self.components_execution_sequence = list
         x = 0

@@ -1,13 +1,11 @@
-
 \section{Algoritmo de Simulação}
 
-O algoritmo que representa a simulação do circuito lógico é 
-apresentado no \textit{algorithm \space \ref{alg:simulacao}}.
+O algoritmo do simulador básico de circuitos lógicos é apresentado em \textit{algorithm \ref{alg:simulacao}}.
 
 \BlankLine
 
-\begin{algorithm}[h]
-    \caption{Algoritmo do simulador de circuito lógico super simples}
+\begin{algorithm}[ht]
+    \caption{Algoritmo do simulador básico de circuitos lógicos}
     \label{alg:simulacao}
     
     % defining key words to use in the text
@@ -17,9 +15,15 @@ apresentado no \textit{algorithm \space \ref{alg:simulacao}}.
 
     \SetAlgoLined
     
-    \KwEntrada {$circuito.hdl, estimulos.txt$}
+    \BlankLine
+
+    \KwEntrada {\textit{testes específicos, circuito.hdl, estimulos.txt}}
+
+    \BlankLine
 
     \KwSaida {$saida0.csv, saida1.csv$}
+
+    \BlankLine
 
     \KwExecutarSimulacao{circuito, estímulos, atraso}    
     \Begin{
@@ -28,12 +32,16 @@ apresentado no \textit{algorithm \space \ref{alg:simulacao}}.
 
         inicializar indicador de tempo da simulação
 
-        \CommentSty{O circuito estabilizará quando duas saídas consecutivas forem iguais.}
+        % \CommentSty{O circuito estabilizará quando duas saídas consecutivas forem iguais.}
         
         \While{circuito não estabilizar}
         {
+            \BlankLine
+
             \ForEach{estimulo}
             {
+                \BlankLine
+
                 \eIf{variavel}
                 {
                     atribuir valor lido à respectiva variável
@@ -54,10 +62,26 @@ apresentado no \textit{algorithm \space \ref{alg:simulacao}}.
                     gerar saída utilizando o tempo atual da simulação e os valores de todas as variáveis do circuito
                 }
 
+                \BlankLine
+
                 incrementar indicador de tempo da simulação
 
+                \BlankLine
+
             }
-            
+
+            \BlankLine
+
+            \CommentSty{/* Executa novamente o circuito lógico visando sua estabilização devido ao término 
+            dos estímulos de entrada. */}
+
+            \If{circuito não estabilizar}
+            {
+                calcular portas lógicas do circuito conforme o atraso 
+
+                incrementar indicador de tempo da simulação
+            }
+
         }
         
     }
@@ -66,7 +90,9 @@ apresentado no \textit{algorithm \space \ref{alg:simulacao}}.
 
     \BlankLine
 
-    \CommentSty{Programa principal - Gerencia a execução da simulação dos testes}
+    \CommentSty{/* Programa principal que gerencia a execução da simulação dos testes.*/}
+
+    \BlankLine
 
     \ForEach{teste específico}
     {    
@@ -78,13 +104,13 @@ apresentado no \textit{algorithm \space \ref{alg:simulacao}}.
         
         \KwExecutarSimulacao{circuito, estímulos, 0}    
 
-        gerar saída da simulação do circuito com atraso 0 (\textit{saida0}) 
+        gerar arquivo de saída da simulação do circuito com atraso 0 (\textit{saida0}) 
 
         \BlankLine
 
         \KwExecutarSimulacao{circuito, estímulos, 1}    
         
-        gerar saída da simulação do circuito com atraso 1 (\textit{saida1}) 
+        gerar arquivo de saída da simulação do circuito com atraso 1 (\textit{saida1}) 
     } 
 
 \end{algorithm}

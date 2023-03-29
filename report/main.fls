@@ -1414,16 +1414,16 @@ INPUT .\Tarefas\algoritmo_simulacao.tex
 INPUT .\Tarefas\algoritmo_simulacao.tex
 INPUT Tarefas\algoritmo_simulacao.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
-INPUT .\Tarefas\teste.tex
-INPUT .\Tarefas\teste.tex
-INPUT .\Tarefas\teste.tex
-INPUT Tarefas\teste.tex
-INPUT .\Tarefas\teste.tex
-INPUT .\Tarefas\teste.tex
-INPUT Tarefas\teste.tex
+INPUT .\Tarefas\testes.tex
+INPUT .\Tarefas\testes.tex
+INPUT .\Tarefas\testes.tex
+INPUT Tarefas\testes.tex
+INPUT .\Tarefas\testes.tex
+INPUT .\Tarefas\testes.tex
+INPUT Tarefas\testes.tex
 INPUT .\Tarefas\consideracoes_aprendizado.tex
 INPUT Tarefas\consideracoes_aprendizado.tex
 INPUT .\Tarefas\consideracoes_aprendizado.tex

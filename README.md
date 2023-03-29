@@ -63,7 +63,7 @@ docker run --name projeto-01 -v projeto-01-volume:/app/test projeto-01:1.0
 docker cp projeto-01:/app/test/. test/.
 ```
     
-### 8. Visualização dos resultados da simulação dos testes
+### 8. Visualização dos resultados da simulação
 
 
 Todos os resultados das simulações (*saida0.csv* e *saida1.csv*) estarão posicionados nas pastas específicas dos testes.
