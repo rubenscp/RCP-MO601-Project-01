@@ -63,3 +63,9 @@ docker cp projeto-01:/app/test/. test/.
 
 
 Todos os resultados das simulações (*saida0.csv* e *saida1.csv*) estarão posicionados nas pastas específicas dos testes.
+
+___
+
+## Relatório do Projeto
+
+O relatório do projeto pode ser acessado clicando [aqui](https://github.com/rubenscp/RCP-MO601-Project-01/blob/main/relatorio.pdf)
