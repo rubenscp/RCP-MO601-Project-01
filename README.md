@@ -14,7 +14,7 @@ ___
 
 Este repositório contém todos os artefatos do Projeto 1 que implementa um simulador super básico de circuitos lógicos.
 
-O relatório compacto do projeto pode ser acessado [aqui](https://github.com/rubenscp/RCP-MO601-Project-01/blob/main/relatorio.pdf)
+O relatório compacto do projeto pode ser acessado [aqui](https://github.com/rubenscp/RCP-MO601-Project-01/blob/main/relatorio.pdf).
 
 Siga as instruções abaixo para a execução completa dessa aplicação:
 
@@ -90,14 +90,19 @@ docker rmi projeto-01:1.0
 docker volume rm projeto-01-volume
 ```
 
-
-#### Listas todos os containeres
+#### Listar todos os containeres
 
 ```
 docker container ls 
 ```
 
-#### Listas todas os volumes 
+#### Listar todas as imagens
+
+```
+docker images 
+```
+
+#### Listar todos os volumes
 
 ```
 docker volume ls
